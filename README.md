@@ -1,0 +1,2 @@
+# Covid-19
+El Covid-19 es una realidad que afrontamos en este siglo, y a pesar de ser tan malo, gracias a la tecnología podemos luchar contra él creando estrategias, medidas de contención basándonos en datos que podemos recoger y mantener informado a cualquier usuario de la situación en cada país. Desarrolla una página web en la que los usuarios puedan consultar los datos de los contagios, los recuperados, y la cantidad de personas vacunadas.
