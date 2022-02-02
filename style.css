@@ -1,0 +1,71 @@
+li > .nav-link{
+    color: #6c6c97 !important;
+}
+
+li > .link{
+    color: #fff !important;
+    background-color: #3639ae;
+}
+
+.navbar-collapse{
+    justify-content: space-around;
+}
+
+.navbar-brand{
+    margin-left: 5rem;
+}
+
+.navbar-collapse > ul{
+    margin-left: 7rem;
+}
+
+ul > li{
+    margin-right: 2rem;
+}
+
+
+/*Seccion uno*/
+#uno > .container-fluid{
+    height: 600px;
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(17,124,163,1) 0%, rgba(24,33,96,1) 100%); 
+}
+
+.btn{
+    background-color: #121158 !important;
+}
+
+.row > .textocolor{
+    color: #fff;
+}
+
+.imgageContent{
+    z-index: 5;
+}
+/*Seccion uno*/
+
+/*Seccion dos*/
+#dos{
+    background-color: #171133;
+    height: 1700px;
+}
+
+.tarjeta > .shadow-lg{
+    box-shadow: 0 1rem 3rem rgba(238, 214, 214, 0.44) !important;
+}
+/*Seccion dos*/
+
+@media screen and (max-width: 992px) {
+
+    #uno > .container-fluid{
+        height: fit-content;
+    }
+
+    .logotipos{
+        top: 140px;
+    }
+
+    .margen{
+        margin-top: 130px;
+    }
+}
