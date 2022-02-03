@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tracker</title>
+    <link rel="icon" href="./img/coronavirus.png" type="image/x-icon">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+    <div class="db-container">
+        <nav>
+            <div><img class="imgr" src="./img/coronavirus.png" width="50px"></div>
+            <div class="icon"><a href="dashboard.html"><img src="./img/log1.jpeg"></a></div>
+            <div class="icon"><img src="./img/log2.jpeg"></div>
+            <div class="icon"><a href="dashboardthree.html"><img src="./img/log3.jpeg" ></a></div>
+            <div class="icon"><img src="./img/log4.jpeg" ></div>
+            <div class="icon"><img src="./img/log5.jpeg" ></div>
+            <div class="icon"><img src="./img/log6.jpeg" ></div>
+            <div class="icon"><img src="./img/log7.jpeg"></div>
+            <div class="icon"><img src="./img/log8.jpeg" ></div>
+            <div class="icon"><img src="./img/log9.jpeg" ></div>
+        </nav>
+        
+        <div class="grid-container">
+            <main>
+                <h2>COVID-19 Tracker</h2>
+                <div class="CasosTotales data"></div>
+                <div class="CasosActivos data"></div>
+                <div class="CasosRecuperados data"></div>
+                <div class="Muertes data"></div>
+    
+                <div class="top10"><h4>Top 10 Country</h4></div>
+            </main>
+    
+            <section>
+                <div class="container-list">
+                    <select class="paisesList"></select>
+                    <div class="fecha"></div>
+                </div>
+
+                <div class="cardsData">
+                    <div class="card">
+                        <div class="texto">
+                            <p>Total Cases</p><h3 class="tc"></h3>
+                        </div>
+                        <img src="./img/covid-defult.svg" width="90px">
+                    </div>
+                    <div class="card">
+                        <div class="texto">
+                            <p>Total Deaths</p><h3 class="td"></h3>
+                        </div>
+                        <img src="./img/covid-red.svg" width="90px">
+                    </div>
+                    <div class="card">
+                        <div class="texto">
+                            <p>Total Recovered</p><h3 class="tr"></h3>
+                        </div>
+                        <img src="./img/covid-green.svg" width="90px">
+                    </div>
+                    <div class="card">
+                        <div class="texto">
+                            <p>Total Active</p><h3 class="ta"></h3>
+                        </div>
+                        <img src="./img/covid-blue.svg" width="90px">
+                    </div>
+                    <div class="card">
+                        <div class="texto">
+                            <p>New Cases</p><h3 class="nc"></h3>
+                        </div>
+                        <img src="./img/covid-orange.svg" width="90px">   
+                    </div>
+                    <div class="card">
+                        <div class="texto">
+                            <p>New Deaths</p><h3 class="nd"></h3>
+                        </div>
+                        <img src="./img/covid-redark.svg" width="90px">   
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
