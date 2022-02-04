@@ -84,26 +84,26 @@ let getpais = async(url)=>{
                 if (  pais.country == vino ){
                     paisinfo = pais
                     console.log(paisinfo)
-                    document.querySelector(".zerob").innerHTML = `   ${paisinfo.country}   `  ;
-                    document.querySelector(".oneb").innerHTML = ` Total Cases <br> <br>${paisinfo.cases}`;
-                    document.querySelector(".twob").innerHTML = ` Total Deaths <br> <br>${paisinfo.deaths}`;
-                    document.querySelector(".threb").innerHTML = `Total recovered <br> <br> ${paisinfo.recovered}`;
-                    document.querySelector(".fourb").innerHTML = `Total active <br> <br> ${paisinfo.active}`;
-                    document.querySelector(".fiveb").innerHTML = `New Cases <br> <br>${paisinfo.todayCases}`;
-                    document.querySelector(".sixb").innerHTML =  `New Deaths <br> <br>${paisinfo.todayDeaths}`;
+                    document.querySelector(".zerob").innerHTML = ` <strong>  ${paisinfo.country}  </strong> `  ;
+                    document.querySelector(".oneb").innerHTML = ` Total Cases <br> <br><strong>${paisinfo.cases}</strong>`;
+                    document.querySelector(".twob").innerHTML = ` Total Deaths <br> <br><strong>${paisinfo.deaths}</strong>`;
+                    document.querySelector(".threb").innerHTML = `Total recovered <br> <br><strong> ${paisinfo.recovered}</strong>`;
+                    document.querySelector(".fourb").innerHTML = `Total active <br> <br><strong> ${paisinfo.active}</strong>`;
+                    document.querySelector(".fiveb").innerHTML = `New Cases <br> <br><strong>${paisinfo.todayCases}</strong>`;
+                    document.querySelector(".sixb").innerHTML =  `New Deaths <br> <br><strong>${paisinfo.todayDeaths}</strong>`;
     
                 }
             }
         })
     })
 
-    document.querySelector(".zerob").innerHTML = `   ${result[0].country}   `  ;
-    document.querySelector(".oneb").innerHTML = ` Total Cases <br> <br>${result[0].cases}`;
-    document.querySelector(".twob").innerHTML = ` Total Deaths <br> <br>${result[0].deaths}`;
-    document.querySelector(".threb").innerHTML = `Total recovered <br> <br> ${result[0].recovered}`;
-    document.querySelector(".fourb").innerHTML = `Total active <br> <br> ${result[0].active}`;
-    document.querySelector(".fiveb").innerHTML = `New Cases <br> <br>${result[0].todayCases}`;
-    document.querySelector(".sixb").innerHTML =  `New Deaths <br> <br>${result[0].todayDeaths}`;
+    document.querySelector(".zerob").innerHTML = ` <strong>  ${result[0].country}  </strong> `  ;
+    document.querySelector(".oneb").innerHTML = ` Total Cases <br> <br> <strong> ${result[0].cases} </strong>`;
+    document.querySelector(".twob").innerHTML = ` Total Deaths <br> <br> <strong> ${result[0].deaths}</strong>`;
+    document.querySelector(".threb").innerHTML = `Total recovered <br> <br> <strong> ${result[0].recovered}</strong>`;
+    document.querySelector(".fourb").innerHTML = `Total active <br> <br> <strong> ${result[0].active}</strong>`;
+    document.querySelector(".fiveb").innerHTML = `New Cases <br> <br> <strong> ${result[0].todayCases}</strong>`;
+    document.querySelector(".sixb").innerHTML =  `New Deaths <br> <br> <strong> ${result[0].todayDeaths}</strong>`;
 
     
 
