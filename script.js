@@ -8,6 +8,7 @@ let contMuertes = 0;
 let getData = async (url) => {
     let peticion = await fetch(url);
     let resultado = await peticion.json();
+
     resultado.map(m => contTotal += m.cases)
     resultado.map(m => contActive += m.active)
     resultado.map(m => contRecovered += m.recovered)
@@ -20,6 +21,8 @@ let getData = async (url) => {
     ///////////////////////////////////Top 10 global cases////////////////////////////
     let res = resultado.map(g => g.cases)
     res.sort(function(a, b){return b-a}); // organizar desendentemente
+    
+
     let topCasos = []
     for (let i = 0; i < 10; i++) {
         topCasos.push(res[i])
