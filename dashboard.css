@@ -156,6 +156,8 @@ main > h2 , .top10 > h4{
 .card > img{
     margin-left: auto;
     opacity: .5;
+    z-index: 10;
+    margin-top: -82px;
 }
 
 .card img:hover{

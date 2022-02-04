@@ -128,42 +128,28 @@ main > h2 , .top10 > h4{
     align-items: center;
 }
 
-.topCountryCards{
-    display: grid;
-    grid-template-columns: repeat(6,1fr);
-    gap: 1rem;
-    padding-top: .3rem;
-    padding-left: 1rem;
+.containerTabla{
+    width: 850px;
+    height: 550px;
+    overflow-y: scroll;
 }
 
-.letra > p{
-    margin-bottom: .5rem;
-    font-weight: bold;
+tr > th{
+    color: #1c1658;
 }
 
-.columna{
-    font-size: .7rem;
+.title{
     display: flex;
-    align-items: center;
-    margin: auto;
-    border-radius: 5px;
-    width: 90%;
-    height: 36.9px;
-    background-color: #fff;
-    margin-bottom: 1rem;
-    padding: 1rem;
     justify-content: space-between;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    align-items: center;
 }
 
-.flagRadius{
-    width: 22px;
-    border-radius: 30%;
+.table{
+    display: inline;
 }
 
-.letra{
-    color: #121177;
-    text-align: center;
+.hide{
+    display: none;
 }
 
 @media screen and (max-width: 375px){
