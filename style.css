@@ -86,28 +86,32 @@ border:solid salmon 1px; */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    background-color: #171133;
 }
 
 .light-blue{
     border: 1px solid salmon;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     width: 90%;
     height: 489px;
     border-radius: 9px;
-}
+    background-image: radial-gradient(circle at 120.44% 56.16%, #07C3E8 0, #0F84CE 25%, #0172a7 50%, #1e11da 75%, #022244 100%);}
 
 .texto-light-blue{
     border: 1px solid salmon;
     display: flex;
     flex-direction: column;
+    color: white;
     
 }
 
 .texto-light-blue h2{
     font-size: 37px;
     font-weight: 700;
+    color: white;
 
 }
 
@@ -119,4 +123,26 @@ border:solid salmon 1px; */
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+    color: rgb(0, 0, 0);
+    background-color: white;
+}
+
+.celulito{
+    border:solid salmon 1px;
+    margin-top: -180px;
+}
+
+
+
+
+
+@media screen and (max-width: 806px) {
+
+    .celulito{
+        border:solid rgb(201, 33, 207) 1px;
+        margin-top: 0px;
+        width: 140px;
+    }
+
+
 }
