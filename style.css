@@ -153,7 +153,7 @@ border:solid salmon 1px; */
 
 .sexta{
     width: 100%;
-    /* height: 550px; */
+    /* height: 550px;  */
     display:flex ;
     justify-content: center;
     align-items: center;
@@ -164,8 +164,9 @@ border:solid salmon 1px; */
 
 .secta-padre{
     width: 80%;
-    
+    border: #07C3E8 solid 1px;
     display:flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -175,9 +176,17 @@ border:solid salmon 1px; */
     width: 120px;
 }
 
+.marcame{
+    border: #e807ca solid 1px;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
 
 .come{
-    margin-left: 40px;
+    /* margin-left: 40px; */
+    border: #07C3E8 solid 1px;
 }
 .comentarito{
     display:flex;
@@ -198,3 +207,31 @@ border:solid salmon 1px; */
     }
 
 }
+
+
+/* 
+//////////////////// */
+
+
+footer{
+    width: 100%;
+     
+    height: 350px;
+    background-color: #1B2A4E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-wrap: wrap;
+}
+
+.ups{
+    width: 80%;
+   
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+
