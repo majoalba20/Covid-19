@@ -139,51 +139,32 @@ main > h2 , .top10 > h4{
 
 /* //////////////////////////////////////////////////////// */
 
-.banderillas{
-    
+.container{
+    background-color: #ECEDF0;
+}
+
+.itemk{
+    width: 250px;
+    /* border: #3641b6 solid 1px; */
+    display: flex;
+    flex-direction: column;
+   
+    justify-content: center;
+
+
+}
+
+.itemk img{
     width: 100%;
     
+}
+.padre-item{
     display: flex;
     flex-wrap: wrap;
-}
-
-.banderillas img{
-        width: 30px;
-        margin: 10px;
-}
-
-.cajilla{
-    
-    width: 240px;
-    height: 110px; 
-    display: flex;
-    align-items: center;
+    width: 100%;
+    /* border: #3641b6 solid 1px; */
     justify-content: space-around;
-    background-color: rgb(221, 224, 231);
-    margin-top: 15px;
-    border-radius: 5px;
-}
-
-.cajilla img{
-    width: 80px;
-    
-   
-}
-.cardi{
-    
-   
-    border-radius: 5px;
     margin-top: 30px;
-   
-    
-    
+    color: #1e2685;
 }
 
-
-.papacardi{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    position: relative;
-}
