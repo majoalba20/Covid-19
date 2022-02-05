@@ -82,7 +82,7 @@ border:solid salmon 1px; */
 
 .quinta{
     width: 100%;
-    border: 1px solid salmon;
+    /* border: 1px solid salmon; */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -90,7 +90,7 @@ border:solid salmon 1px; */
 }
 
 .light-blue{
-    border: 1px solid salmon;
+    /* border: 1px solid salmon; */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -101,7 +101,7 @@ border:solid salmon 1px; */
     background-image: radial-gradient(circle at 120.44% 56.16%, #07C3E8 0, #0F84CE 25%, #0172a7 50%, #1e11da 75%, #022244 100%);}
 
 .texto-light-blue{
-    border: 1px solid salmon;
+    /* border: 1px solid salmon; */
     display: flex;
     flex-direction: column;
     color: white;
@@ -116,7 +116,7 @@ border:solid salmon 1px; */
 }
 
 .boton-download{
-    border:solid salmon 1px;
+    /* border:solid salmon 1px; */
     width: 170px;
     height: 50px;
     display: flex;
@@ -128,7 +128,7 @@ border:solid salmon 1px; */
 }
 
 .celulito{
-    border:solid salmon 1px;
+    /* border:solid salmon 1px; */
     margin-top: -180px;
 }
 
@@ -139,10 +139,62 @@ border:solid salmon 1px; */
 @media screen and (max-width: 806px) {
 
     .celulito{
-        border:solid rgb(201, 33, 207) 1px;
+      /*   border:solid rgb(201, 33, 207) 1px; */
         margin-top: 0px;
         width: 140px;
     }
 
+
+}
+
+
+
+/* sextaaaaaaaaaaaaaa */
+
+.sexta{
+    width: 100%;
+    /* height: 550px; */
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #171133;
+    color: #fff;
+}
+
+.secta-padre{
+    width: 80%;
+    
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.secta-padre img{
+    width: 120px;
+}
+
+
+.come{
+    margin-left: 40px;
+}
+.comentarito{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+
+.imagen{
+    margin: 20px;
+}
+
+@media screen and (max-width: 509px) {
+
+    .secta-padre{
+        margin-top: 80px;
+    }
 
 }
