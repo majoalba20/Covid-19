@@ -69,3 +69,54 @@ ul > li{
         margin-top: 130px;
     }
 }
+
+
+
+
+
+
+
+/* section 5 */
+/* 
+border:solid salmon 1px; */
+
+.quinta{
+    width: 100%;
+    border: 1px solid salmon;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.light-blue{
+    border: 1px solid salmon;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    height: 489px;
+    border-radius: 9px;
+}
+
+.texto-light-blue{
+    border: 1px solid salmon;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.texto-light-blue h2{
+    font-size: 37px;
+    font-weight: 700;
+
+}
+
+.boton-download{
+    border:solid salmon 1px;
+    width: 170px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
