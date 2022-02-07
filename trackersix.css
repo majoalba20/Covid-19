@@ -75,6 +75,10 @@ main > h2 , .top10 > h4{
     justify-content: space-between;
 }
 
+.data:hover ,.countryCard:hover{
+    scale: 1.01;
+}
+
 .countryCard{
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
@@ -88,12 +92,27 @@ main > h2 , .top10 > h4{
 }
 
 .CasosRecuperados{
-    border-color: #edffec;
-    border: 2px solid #9dd44f;
+    background-color: #edffec;
 }
 
 .Muertes{
     background-color: #eefbff;
+}
+
+.CasosTotales:hover{
+    border: 2px solid #ff094c;
+}
+
+.CasosActivos:hover{
+    border: 2px solid #ff6b08;
+}
+
+.CasosRecuperados:hover{
+    border: 2px solid #9dd44f;
+}
+
+.Muertes:hover{
+    border: 2px solid #3641b6;
 }
 
 .case{
@@ -129,14 +148,41 @@ main > h2 , .top10 > h4{
 }
 
 .grafica{
-    height: 450px;
-    width: 400px;
+    height: 47vh;
+    width: 18vw;
     background-color: #fff;
+}
+
+.graficas{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+    justify-items: center;
+    align-items: center;
 }
 
 @media screen and (max-width: 375px){
 
+    nav{
+        height: 550vh;
+    }
+
     .grid-container{
         grid-template-columns: 1fr;
+    }
+
+    .graficas{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .grafica{
+        width: 80vw;
+        margin-bottom: 40px;
+        height: 60vh;
+    }
+
+    .grafica:first-child{
+        margin-top: 40px;
     }
 }

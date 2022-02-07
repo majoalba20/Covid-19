@@ -36,18 +36,65 @@ let getData = async (url) => {
             }
         }
     }
+
+    ////////////////Top5/////////////////////////////////
+    let res5 = resultado.map(f => f.cases)
+    res5.sort(function (a, b) {
+        return b - a
+    });
+    let topCinco = []
+    for (let i = 0; i < 5; i++) {
+        topCinco.push(res5[i])
+    }
+
+    arrayTop5 = []
+    for (let i = 0; i < topCinco.length; i++) {
+        for (let j = 0; j < resultado.length; j++) {
+            if (resultado[j].cases === topCinco[i]) {
+                arrayTop5.push(resultado[j])
+            }
+        }
+    }
+    ///////////////////////////////////////////////////////
+
+    grafica = document.getElementById("myCanvas").getContext('2d');
+    grafica1 = document.getElementById("myCanvas1").getContext('2d');
+    grafica2 = document.getElementById("myCanvas2").getContext('2d');
+    grafica3 = document.getElementById("myCanvas3").getContext('2d');
+    grafica4 = document.getElementById("myCanvas4").getContext('2d');
+
+    let pintarGrafica = (valor, x) => {
+        let valorTotal = arrayTop5[x].active + arrayTop5[x].cases + arrayTop5[x].deaths;
+        let myChart = new Chart(valor, {
+            type: "pie",
+            data: {
+                labels: ['Active', 'Cases', 'Deaths'],
+                datasets: [{
+                    label: '',
+                    data: [`${(arrayTop5[x].active/valorTotal)*100}`, `${(arrayTop5[x].cases/valorTotal)*100}`, `${(arrayTop5[x].deaths/valorTotal)*100}`],
+                    backgroundColor: [
+                        'rgb(233, 73, 105)',
+                        'rgb(12, 12, 207)',
+                        'rgb(200, 100, 218)'
+                    ]
+                }]
+            }
+        });
+    }
+
+    pintarGrafica(grafica, 0);
+    pintarGrafica(grafica1, 1);
+    pintarGrafica(grafica2, 2);
+    pintarGrafica(grafica3, 3);
+    pintarGrafica(grafica4, 4);
 }
 
-document.addEventListener("load", getData(url))
-
-let getDataGraphic = async(link)=>{
-    let solicitud = await fetch(link);
-    let respuesta = await solicitud.json();
-    console.log(respuesta)
-    let grafica = document.querySelector("#myCanvas").getContext("2d");
+let getDataGlobal = async (urlGraphic) => {
+    let peticion = await fetch(urlGraphic);
+    let respuesta = await peticion.json();
+    mundialData = document.getElementById("pCanvas").getContext('2d');
     let valorTotal = respuesta.active + respuesta.cases + respuesta.deaths;
-    console.log(valorTotal)
-    let myChart = new Chart(grafica, {
+    let myChart = new Chart(mundialData, {
         type: "doughnut",
         data: {
             labels: ['Active', 'Cases', 'Deaths'],
@@ -55,13 +102,14 @@ let getDataGraphic = async(link)=>{
                 label: '',
                 data: [`${(respuesta.active/valorTotal)*100}`, `${(respuesta.cases/valorTotal)*100}`, `${(respuesta.deaths/valorTotal)*100}`],
                 backgroundColor: [
-                    'rgb(233, 73, 105)',
-                    'rgb(12, 12, 207)',
-                    'rgb(200, 100, 218)'
+                    'rgb(143, 188, 143)',
+                    'rgb(32, 178, 170)',
+                    'rgb(65, 105, 225)'
                 ]
             }]
         }
     });
 }
 
-document.addEventListener("load", getDataGraphic(urlGraphic))
+document.addEventListener("load", getData(url))
+document.addEventListener("load", getDataGlobal(urlGraphic))
