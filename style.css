@@ -98,7 +98,9 @@ border:solid salmon 1px; */
     width: 90%;
     height: 489px;
     border-radius: 9px;
-    background-image: radial-gradient(circle at 120.44% 56.16%, #07C3E8 0, #0F84CE 25%, #0172a7 50%, #1e11da 75%, #022244 100%);}
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(30,18,160,1) 0%, rgba(7,198,233,1) 100%);
+}
 
 .texto-light-blue{
     /* border: 1px solid salmon; */
