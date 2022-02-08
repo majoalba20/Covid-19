@@ -19,4 +19,4 @@
 <img src="./img/tracker8.png">
 
 <h3>Pagina desplegada:</h3>
-https://majoalba20.github.io/Covid-19/
+<p>https://majoalba20.github.io/Covid-19/</p>
