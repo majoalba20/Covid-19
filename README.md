@@ -13,9 +13,10 @@
 <img src="./img/tracker2.png">
 <img src="./img/tracker3.png">
 <img src="./img/tracker4.png">
-<img src="./img/tracker1.png">
+<img src="./img/tracker5.png">
 <img src="./img/tracker6.png">
 <img src="./img/tracker7.png">
 <img src="./img/tracker8.png">
 
 <h3>Pagina desplegada:</h3>
+https://majoalba20.github.io/Covid-19/
