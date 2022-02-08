@@ -19,7 +19,9 @@ let getData = async (url) => {
 
     ///////////////////////////////////Top 10 global cases////////////////////////////
     let res = resultado.map(g => g.cases)
-    res.sort(function(a, b){return b-a});
+    res.sort(function (a, b) {
+        return b - a
+    });
     let topCasos = []
     for (let i = 0; i < 10; i++) {
         topCasos.push(res[i])
@@ -45,9 +47,9 @@ let conteoactivo = 0;
 let conteorecuperados = 0;
 let conteomuertes = 0;
 
-let pruebita=0;
+let pruebita = 0;
 
-let getpais = async(url)=>{
+let getpais = async (url) => {
     let peticiion = await fetch(url);
     let result = await peticiion.json();
     result.map(m => conteototal += m.cases)
@@ -55,71 +57,61 @@ let getpais = async(url)=>{
     result.map(m => conteorecuperados += m.recovered)
     result.map(m => conteomuertes += m.deaths)
 
-    
-   console.log(result)
- 
+
+    console.log(result)
+
     for (let i = 0; i < result.length; i++) {
-       
-        elemento=`<div class="tarjetabandera"><img class="banderilla" id=${result[i].country} src=${result[i].countryInfo.flag} </div>`;
+        elemento = `<div class="tarjetabandera"><img class="banderilla" id=${result[i].country} src=${result[i].countryInfo.flag} </div>`;
         document.querySelector(".banderillas").innerHTML += elemento;
-
-
     }
- 
-    
 
 
-   
 
-
-  
-    
     let tarjetabandera4 = document.querySelectorAll(".tarjetabandera");
-    tarjetabandera4.forEach(bandera=>{
-        
-        bandera.addEventListener("click",(e)=>{
+    tarjetabandera4.forEach(bandera => {
+
+        bandera.addEventListener("click", (e) => {
             let vino = e.target.id;
             for (const pais of result) {
-                
-                if (  pais.country == vino ){
+
+                if (pais.country == vino) {
                     paisinfo = pais
                     console.log(paisinfo)
-                    document.querySelector(".zerob").innerHTML = ` <strong>  ${paisinfo.country}  </strong> `  ;
+                    document.querySelector(".zerob").innerHTML = ` <strong>  ${paisinfo.country}  </strong> `;
                     document.querySelector(".oneb").innerHTML = ` Total Cases <br> <br><strong>${paisinfo.cases}</strong>`;
                     document.querySelector(".twob").innerHTML = ` Total Deaths <br> <br><strong>${paisinfo.deaths}</strong>`;
                     document.querySelector(".threb").innerHTML = `Total recovered <br> <br><strong> ${paisinfo.recovered}</strong>`;
                     document.querySelector(".fourb").innerHTML = `Total active <br> <br><strong> ${paisinfo.active}</strong>`;
                     document.querySelector(".fiveb").innerHTML = `New Cases <br> <br><strong>${paisinfo.todayCases}</strong>`;
-                    document.querySelector(".sixb").innerHTML =  `New Deaths <br> <br><strong>${paisinfo.todayDeaths}</strong>`;
-    
+                    document.querySelector(".sixb").innerHTML = `New Deaths <br> <br><strong>${paisinfo.todayDeaths}</strong>`;
+
                 }
             }
         })
     })
 
-    document.querySelector(".zerob").innerHTML = ` <strong>  ${result[0].country}  </strong> `  ;
+    document.querySelector(".zerob").innerHTML = ` <strong>  ${result[0].country}  </strong> `;
     document.querySelector(".oneb").innerHTML = ` Total Cases <br> <br> <strong> ${result[0].cases} </strong>`;
     document.querySelector(".twob").innerHTML = ` Total Deaths <br> <br> <strong> ${result[0].deaths}</strong>`;
     document.querySelector(".threb").innerHTML = `Total recovered <br> <br> <strong> ${result[0].recovered}</strong>`;
     document.querySelector(".fourb").innerHTML = `Total active <br> <br> <strong> ${result[0].active}</strong>`;
     document.querySelector(".fiveb").innerHTML = `New Cases <br> <br> <strong> ${result[0].todayCases}</strong>`;
-    document.querySelector(".sixb").innerHTML =  `New Deaths <br> <br> <strong> ${result[0].todayDeaths}</strong>`;
-
-    
+    document.querySelector(".sixb").innerHTML = `New Deaths <br> <br> <strong> ${result[0].todayDeaths}</strong>`;
 
 
-    
-/*     let barba=document.querySelectorAll(".tarjetabandera");
 
-    barba.forEach(bandera=> {
-        bandera.addEventListener("click",(e)=>{
-            console.log("cali")
-        })
-   
-    });
-     */
 
-  
+
+    /*     let barba=document.querySelectorAll(".tarjetabandera");
+
+        barba.forEach(bandera=> {
+            bandera.addEventListener("click",(e)=>{
+                console.log("cali")
+            }) 
+        });
+         */
+
+
 
 
 

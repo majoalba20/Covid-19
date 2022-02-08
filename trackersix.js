@@ -1,5 +1,6 @@
 let url = "https://disease.sh/v3/covid-19/countries/";
 let urlGraphic = "https://disease.sh/v3/covid-19/all";
+let urlHistory = "https://disease.sh/v3/covid-19/historical/all?lastdays=all";
 
 let contTotal = 0;
 let contActive = 0;
@@ -64,14 +65,14 @@ let getData = async (url) => {
     grafica4 = document.getElementById("myCanvas4").getContext('2d');
 
     let pintarGrafica = (valor, x) => {
-        let valorTotal = arrayTop5[x].active + arrayTop5[x].cases + arrayTop5[x].deaths;
+        let valorTotal = arrayTop5[x].recovered + arrayTop5[x].cases + arrayTop5[x].deaths;
         let myChart = new Chart(valor, {
             type: "pie",
             data: {
-                labels: ['Active', 'Cases', 'Deaths'],
+                labels: ['Recovered', 'Cases', 'Deaths'],
                 datasets: [{
                     label: '',
-                    data: [`${(arrayTop5[x].active/valorTotal)*100}`, `${(arrayTop5[x].cases/valorTotal)*100}`, `${(arrayTop5[x].deaths/valorTotal)*100}`],
+                    data: [`${(arrayTop5[x].recovered/valorTotal)*100}`, `${(arrayTop5[x].cases/valorTotal)*100}`, `${(arrayTop5[x].deaths/valorTotal)*100}`],
                     backgroundColor: [
                         'rgb(233, 73, 105)',
                         'rgb(12, 12, 207)',
@@ -93,14 +94,14 @@ let getDataGlobal = async (urlGraphic) => {
     let peticion = await fetch(urlGraphic);
     let respuesta = await peticion.json();
     mundialData = document.getElementById("pCanvas").getContext('2d');
-    let valorTotal = respuesta.active + respuesta.cases + respuesta.deaths;
+    let valorTotal = respuesta.recovered + respuesta.cases + respuesta.deaths;
     let myChart = new Chart(mundialData, {
         type: "doughnut",
         data: {
-            labels: ['Active', 'Cases', 'Deaths'],
+            labels: ['Recovered', 'Cases', 'Deaths'],
             datasets: [{
                 label: '',
-                data: [`${(respuesta.active/valorTotal)*100}`, `${(respuesta.cases/valorTotal)*100}`, `${(respuesta.deaths/valorTotal)*100}`],
+                data: [`${(respuesta.recovered/valorTotal)*100}`, `${(respuesta.cases/valorTotal)*100}`, `${(respuesta.deaths/valorTotal)*100}`],
                 backgroundColor: [
                     'rgb(143, 188, 143)',
                     'rgb(32, 178, 170)',
@@ -113,3 +114,15 @@ let getDataGlobal = async (urlGraphic) => {
 
 document.addEventListener("load", getData(url))
 document.addEventListener("load", getDataGlobal(urlGraphic))
+
+let getHistory = async(url)=>{
+    let pet = await fetch(url);
+    let res = await pet.json()
+    for (let i = 0; i < res.length; i++) {
+        console.log(res.cases[i])
+        
+    }
+}
+
+document.addEventListener("load", getHistory(urlHistory))
+
