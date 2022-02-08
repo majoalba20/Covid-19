@@ -1,0 +1,221 @@
+index*************************************************************************************************
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboardthree.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="db-container">
+        <nav>
+            <div><img class="imgr" src="./img/coronavirus.png" width="50px"></div>
+            <div class="icon"><a href="dashboard.html"><img src="./img/log1.jpeg"></a></div>
+            <div class="icon"><img src="./img/log2.jpeg"></div>
+            <div class="icon"><a href="dashboardthree.html"><img src="./img/log3.jpeg" ></a></div>
+            <div class="icon"><img src="./img/log4.jpeg" ></div>
+            <div class="icon"><img src="./img/log5.jpeg" ></div>
+            <div class="icon"><img src="./img/log6.jpeg" ></div>
+            <div class="icon"><img src="./img/log7.jpeg"></div>
+            <div class="icon"><img src="./img/log8.jpeg" ></div>
+            <div class="icon"><img src="./img/log9.jpeg" ></div>
+        </nav>
+        
+        <div class="grid-container">
+            <main>
+                <h2>COVID-19 Tracker</h2>
+                <div class="CasosTotales data"></div>
+                <div class="CasosActivos data"></div>
+                <div class="CasosRecuperados data"></div>
+                <div class="Muertes data"></div>
+    
+                <div class="top10"><h4>Top 10 Country</h4></div>
+            </main>
+        </div>
+    </div>
+    <script src="three.js"></script>
+</body>
+</html>
+
+style********************************************************************************************************
+
+* {
+    margin: 0;
+}
+
+body{
+    background-color: #f3f5fa;
+}
+
+.db-container{
+    display: flex;
+}
+
+nav {
+    background-color: #f7f8fc;
+    display: flex;
+    gap: 2.2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100vh;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes rotate {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.imgr {
+    -webkit-animation: 10s rotate linear infinite;
+    animation: 10s rotate linear infinite;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+
+.grid-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 375px 1fr;
+}
+
+main{
+    overflow-y: scroll;
+    height: 100vh;
+    background-color: #fff;
+}
+
+main > h2 , .top10 > h4{
+    padding: 1.5rem;
+}
+
+.data ,.countryCard{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    border-radius: 5px;
+    width: 70%;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+.countryCard{
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.CasosTotales{
+    background-color: #fff2f2;
+}
+
+.CasosActivos{
+    background-color: #fff9f1;
+}
+
+.CasosRecuperados{
+    border-color: #edffec;
+    border: 2px solid #9dd44f;
+}
+
+.Muertes{
+    background-color: #eefbff;
+}
+
+.case{
+    font-size: 1.4rem;
+    margin-left: auto;
+}
+
+.caseNumber{
+    color: #ff094c;
+}
+
+.caseNumberuno{
+    color: #ff6b08;
+}
+
+.caseNumberdos{
+    color: #82c519;
+}
+
+.caseNumbertres{
+    color: #3641b6;
+}
+
+.flag{
+    width: 15%;
+}
+
+.container-list{
+    display: flex;
+    padding: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (max-width: 375px){
+
+    .grid-container{
+        grid-template-columns: 1fr;
+    }
+}
+
+script****************************************************************************************************************
+
+let url = "https://disease.sh/v3/covid-19/countries/";
+
+let contTotal = 0;
+let contActive = 0;
+let contRecovered = 0;
+let contMuertes = 0;
+
+let getData = async (url) => {
+    let peticion = await fetch(url);
+    let resultado = await peticion.json();
+    resultado.map(m => contTotal += m.cases)
+    resultado.map(m => contActive += m.active)
+    resultado.map(m => contRecovered += m.recovered)
+    resultado.map(m => contMuertes += m.deaths)
+    document.querySelector(".CasosTotales").innerHTML = `Total Case <p class="caseNumber case">${contTotal}</p>`;
+    document.querySelector(".CasosActivos").innerHTML = `Active Case <p class="caseNumberuno case">${contActive}</p>`;
+    document.querySelector(".CasosRecuperados").innerHTML = `Recovered Case <p class="caseNumberdos case">${contRecovered}</p>`;
+    document.querySelector(".Muertes").innerHTML = `Deaths Case <p class="caseNumbertres case">${contMuertes}</p>`;
+
+    ///////////////////////////////////Top 10 global cases////////////////////////////
+    let res = resultado.map(g => g.cases)
+    res.sort(function(a, b){return b-a});
+    let topCasos = []
+    for (let i = 0; i < 10; i++) {
+        topCasos.push(res[i])
+    }
+
+    for (let i = 0; i < topCasos.length; i++) {
+        for (let j = 0; j < resultado.length; j++) {
+            if (resultado[j].cases === topCasos[i]) {
+                codeHTML = `<div class="countryCard"><img class="flag" src=${resultado[j].countryInfo.flag}>${resultado[j].country} ${resultado[j].cases}</div>`;
+                document.querySelector(".top10").innerHTML += codeHTML;
+            }
+        }
+    }
+}
+
+document.addEventListener("load", getData(url))

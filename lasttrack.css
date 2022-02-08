@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+}
+
+body {
+    background-color: #f3f5fa;
+}
+
+.db-container {
+    display: flex;
+}
+
+nav {
+    background-color: #f7f8fc;
+    display: flex;
+    gap: 2.2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100vh;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes rotate {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.imgr {
+    -webkit-animation: 10s rotate linear infinite;
+    animation: 10s rotate linear infinite;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+
+.grid-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 375px 1fr;
+}
+
+main {
+    overflow-y: scroll;
+    height: 100vh;
+    background-color: #fff;
+}
+
+main>h2,
+.top10>h4 {
+    padding: 1.5rem;
+}
+
+.data,
+.countryCard {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    border-radius: 5px;
+    width: 70%;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+.data:hover ,.countryCard:hover{
+    scale: 1.01;
+}
+
+.countryCard {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.CasosTotales {
+    background-color: #fff2f2;
+}
+
+.CasosActivos {
+    background-color: #fff9f1;
+}
+
+.CasosRecuperados {
+    background-color: #edffec;
+}
+
+.Muertes {
+    background-color: #eefbff;
+}
+
+.CasosTotales:hover {
+    border: 2px solid #ff094c;
+}
+
+.CasosActivos:hover {
+    border: 2px solid #ff6b08;
+}
+
+.CasosRecuperados:hover {
+    border: 2px solid #9dd44f;
+}
+
+.Muertes:hover {
+    border: 2px solid #3641b6;
+}
+
+.case {
+    font-size: 1.4rem;
+    margin-left: auto;
+}
+
+.caseNumber {
+    color: #ff094c;
+}
+
+.caseNumberuno {
+    color: #ff6b08;
+}
+
+.caseNumberdos {
+    color: #82c519;
+}
+
+.caseNumbertres {
+    color: #3641b6;
+}
+
+.flag {
+    width: 15%;
+}
+
+.container-list {
+    display: flex;
+    padding: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (max-width: 375px) {
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* //////////////////////////////////////////////////////// */
+
+.container {
+    background-color: #ECEDF0;
+}
+
+.itemk {
+    width: 250px;
+    /* border: #3641b6 solid 1px; */
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+
+}
+
+.itemk img {
+    width: 100%;
+
+}
+
+.padre-item {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    /* border: #3641b6 solid 1px; */
+    justify-content: space-around;
+    margin-top: 30px;
+    color: #1e2685;
+}
+
+@media screen and (max-width: 1440px) {
+    .container{
+        height: fit-content;
+    }
+
+    .itemk img{
+        width: 80%;
+    }
+
+    .padre-item{
+        margin-top: 0;
+    }
+}
+
