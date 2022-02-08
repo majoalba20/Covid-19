@@ -225,7 +225,7 @@ main > h2 , .top10 > h4{
     color: #b70202;
 }
 
-@media screen and (max-width: 375px) and (max-width: 410px){
+@media screen and (max-width: 375px){
 
     .grid-container{
         grid-template-columns: 1fr;
