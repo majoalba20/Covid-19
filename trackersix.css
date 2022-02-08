@@ -186,3 +186,29 @@ main > h2 , .top10 > h4{
         margin-top: 40px;
     }
 }
+
+@media screen and (max-width: 410px){
+
+    nav{
+        height: 550vh;
+    }
+
+    .grid-container{
+        grid-template-columns: 1fr;
+    }
+
+    .graficas{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .grafica{
+        width: 80vw;
+        margin-bottom: 40px;
+        height: 60vh;
+    }
+
+    .grafica:first-child{
+        margin-top: 40px;
+    }
+}

@@ -204,3 +204,14 @@ main>h2,
     }
 }
 
+@media screen and (max-width: 410px) {
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .padre-item:first-child{
+        margin-top: 30px;
+    }
+}
+

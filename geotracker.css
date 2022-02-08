@@ -176,6 +176,17 @@ svg {
     }
 }
 
+@media screen and (max-width: 410px) {
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    section{
+        display: none;
+    }
+}
+
 /*
 section{
     overflow-x: hidden;

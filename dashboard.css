@@ -225,8 +225,42 @@ main > h2 , .top10 > h4{
     color: #b70202;
 }
 
-@media screen and (max-width: 375px){
+@media screen and (max-width: 375px) and (max-width: 410px){
 
+    .grid-container{
+        grid-template-columns: 1fr;
+    }
+
+    .container-list{
+        width: 5vw;
+    }
+
+    .cardsData{
+        padding-left: 0;
+        gap: .5rem;
+    }
+
+    .card{
+        height: 80px;
+        width: 145px;
+    }
+
+    .paisesList{
+        width: 150px;
+    }
+
+    .card > img{
+        opacity: .2;
+        margin-top: -78px;
+        margin-left: 60px;
+    } 
+    
+    .card img:hover{
+        opacity: .5;
+    }
+}
+
+@media screen and (max-width: 410px){
     .grid-container{
         grid-template-columns: 1fr;
     }

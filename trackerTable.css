@@ -181,3 +181,14 @@ tr > th{
         width: 70vw;
     }
 }
+
+@media screen and (max-width: 410px){
+
+    .grid-container{
+        grid-template-columns: 1fr;
+    }
+
+    .containerTabla{
+        width: 70vw;
+    }
+}

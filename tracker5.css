@@ -173,6 +173,22 @@ main > h2 , .top10 > h4{
     }
 }
 
+@media screen and (max-width: 410px){
+
+    .grid-container{
+        grid-template-columns: 1fr;
+    }
+
+    .Contenedor-targeta{
+        overflow-x: hidden;
+    }
+
+    .Targeta{
+        width: 80%;
+        height: fit-content;
+    }
+}
+
 .Contenedor-targeta{
     display: grid;
     justify-items: center;
